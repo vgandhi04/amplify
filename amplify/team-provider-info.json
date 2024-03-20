@@ -1,0 +1,98 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-movie-dev-170656-authRole",
+      "UnauthRoleArn": "arn:aws:iam::533267443935:role/amplify-movie-dev-170656-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::533267443935:role/amplify-movie-dev-170656-authRole",
+      "Region": "ap-south-1",
+      "DeploymentBucketName": "amplify-movie-dev-170656-deployment",
+      "UnauthRoleName": "amplify-movie-dev-170656-unauthRole",
+      "StackName": "amplify-movie-dev-170656",
+      "StackId": "arn:aws:cloudformation:ap-south-1:533267443935:stack/amplify-movie-dev-170656/592413a0-d49b-11ee-baa7-06860d307d0e",
+      "AmplifyAppId": "d3tdwebr7ojogn",
+      "APIGatewayAuthURL": "https://s3.amazonaws.com/amplify-movie-dev-170656-deployment/amplify-cfn-templates/api/APIGatewayAuthStack.json"
+    },
+    "categories": {
+      "function": {
+        "crudData": {
+          "deploymentBucketName": "amplify-movie-dev-170656-deployment",
+          "s3Key": "amplify-builds/crudData-303877736f7161644c4b-build.zip"
+        },
+        "apiAuthorizer": {
+          "deploymentBucketName": "amplify-movie-dev-170656-deployment",
+          "s3Key": "amplify-builds/apiAuthorizer-76386e5670424c4e4341-build.zip"
+        },
+        "moviepipLayer": {
+          "deploymentBucketName": "amplify-movie-dev-170656-deployment",
+          "s3Key": "amplify-builds/moviepipLayer-LambdaLayerVersion8b569e7e-build.zip"
+        },
+        "redisLambda": {
+          "deploymentBucketName": "amplify-movie-dev-170656-deployment",
+          "s3Key": "amplify-builds/redisLambda-4c6338765a4d364e6c6a-build.zip"
+        },
+        "movie9a1f50e7": {},
+        "movieGQL": {},
+        "redisClusterV2": {}
+      },
+      "auth": {
+        "movie9a1f50e7": {},
+        "userPoolGroups": {}
+      },
+      "api": {
+        "movie": {},
+        "movieGQL": {}
+      },
+      "custom": {
+        "redisClusterV2": {}
+      }
+    }
+  },
+  "qa": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-movie-qa-192220-authRole",
+      "UnauthRoleArn": "arn:aws:iam::533267443935:role/amplify-movie-qa-192220-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::533267443935:role/amplify-movie-qa-192220-authRole",
+      "Region": "ap-south-1",
+      "DeploymentBucketName": "amplify-movie-qa-192220-deployment",
+      "UnauthRoleName": "amplify-movie-qa-192220-unauthRole",
+      "StackName": "amplify-movie-qa-192220",
+      "StackId": "arn:aws:cloudformation:ap-south-1:533267443935:stack/amplify-movie-qa-192220/ce58b380-e52e-11ee-a565-0a6ed3784c4f",
+      "AmplifyAppId": "d3tdwebr7ojogn",
+      "APIGatewayAuthURL": "https://s3.amazonaws.com/amplify-movie-qa-192220-deployment/amplify-cfn-templates/api/APIGatewayAuthStack.json"
+    },
+    "categories": {
+      "auth": {
+        "movie9a1f50e7": {},
+        "userPoolGroups": {}
+      },
+      "function": {
+        "apiAuthorizer": {
+          "deploymentBucketName": "amplify-movie-qa-192220-deployment",
+          "s3Key": "amplify-builds/apiAuthorizer-51476e304b7579693242-build.zip"
+        },
+        "crudData": {
+          "deploymentBucketName": "amplify-movie-qa-192220-deployment",
+          "s3Key": "amplify-builds/crudData-303877736f7161644c4b-build.zip"
+        },
+        "moviepipLayer": {
+          "deploymentBucketName": "amplify-movie-qa-192220-deployment",
+          "s3Key": "amplify-builds/moviepipLayer-LambdaLayerVersione86c2907-build.zip"
+        },
+        "redisLambda": {
+          "deploymentBucketName": "amplify-movie-qa-192220-deployment",
+          "s3Key": "amplify-builds/redisLambda-6352527273522b537572-build.zip"
+        },
+        "movie9a1f50e7": {},
+        "movieGQL": {},
+        "redisClusterV2": {}
+      },
+      "api": {
+        "movie": {},
+        "movieGQL": {}
+      },
+      "custom": {
+        "redisClusterV2": {}
+      }
+    }
+  }
+}

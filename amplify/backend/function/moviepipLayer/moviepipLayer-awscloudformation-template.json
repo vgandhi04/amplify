@@ -1,0 +1,72 @@
+{
+  "AWSTemplateFormatVersion": "2010-09-09",
+  "Description": "{\"createdOn\":\"Windows\",\"createdBy\":\"Amplify\",\"createdWith\":\"12.10.1\",\"stackType\":\"function-LambdaLayer\",\"metadata\":{}}",
+  "Parameters": {
+    "env": {
+      "Type": "String"
+    },
+    "deploymentBucketName": {
+      "Type": "String"
+    },
+    "s3Key": {
+      "Type": "String"
+    },
+    "description": {
+      "Type": "String",
+      "Default": ""
+    },
+    "runtimes": {
+      "Type": "List<String>"
+    }
+  },
+  "Resources": {
+    "LambdaLayerVersione86c2907": {
+      "Type": "AWS::Lambda::LayerVersion",
+      "Properties": {
+        "CompatibleRuntimes": {
+          "Ref": "runtimes"
+        },
+        "Content": {
+          "S3Bucket": {
+            "Ref": "deploymentBucketName"
+          },
+          "S3Key": {
+            "Ref": "s3Key"
+          }
+        },
+        "Description": {
+          "Ref": "description"
+        },
+        "LayerName": {
+          "Fn::Sub": [
+            "moviepipLayer-${env}",
+            {
+              "env": {
+                "Ref": "env"
+              }
+            }
+          ]
+        }
+      },
+      "DeletionPolicy": "Delete",
+      "UpdateReplacePolicy": "Retain"
+    },
+    "LambdaLayerPermissionPublice86c2907": {
+      "Type": "AWS::Lambda::LayerVersionPermission",
+      "Properties": {
+        "Action": "lambda:GetLayerVersion",
+        "LayerVersionArn": {
+          "Ref": "LambdaLayerVersione86c2907"
+        },
+        "Principal": "*"
+      }
+    }
+  },
+  "Outputs": {
+    "Arn": {
+      "Value": {
+        "Ref": "LambdaLayerVersione86c2907"
+      }
+    }
+  }
+}

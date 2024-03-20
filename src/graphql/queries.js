@@ -1,0 +1,184 @@
+/* eslint-disable */
+// this is an auto generated file. This will be overwritten
+
+export const getMovie = /* GraphQL */ `
+  query GetMovie($year: Int!, $title: String!) {
+    getMovie(year: $year, title: $title) {
+      year
+      title
+      createdAt
+      updatedAt
+      __typename
+    }
+  }
+`;
+export const listMovies = /* GraphQL */ `
+  query ListMovies(
+    $year: Int
+    $title: ModelStringKeyConditionInput
+    $filter: ModelMovieFilterInput
+    $limit: Int
+    $nextToken: String
+    $sortDirection: ModelSortDirection
+  ) {
+    listMovies(
+      year: $year
+      title: $title
+      filter: $filter
+      limit: $limit
+      nextToken: $nextToken
+      sortDirection: $sortDirection
+    ) {
+      items {
+        year
+        title
+        createdAt
+        updatedAt
+        __typename
+      }
+      nextToken
+      __typename
+    }
+  }
+`;
+export const getUser = /* GraphQL */ `
+  query GetUser($id: ID!) {
+    getUser(id: $id) {
+      id
+      name
+      email
+      organizationID
+      organization {
+        id
+        name
+        createdAt
+        updatedAt
+        __typename
+      }
+      managerID
+      manager {
+        nextToken
+        __typename
+      }
+      createdAt
+      updatedAt
+      __typename
+    }
+  }
+`;
+export const listUsers = /* GraphQL */ `
+  query ListUsers(
+    $filter: ModelUserFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    listUsers(filter: $filter, limit: $limit, nextToken: $nextToken) {
+      items {
+        id
+        name
+        email
+        organizationID
+        managerID
+        createdAt
+        updatedAt
+        __typename
+      }
+      nextToken
+      __typename
+    }
+  }
+`;
+export const getOrg = /* GraphQL */ `
+  query GetOrg($id: ID!) {
+    getOrg(id: $id) {
+      id
+      name
+      user {
+        nextToken
+        __typename
+      }
+      createdAt
+      updatedAt
+      __typename
+    }
+  }
+`;
+export const listOrgs = /* GraphQL */ `
+  query ListOrgs(
+    $filter: ModelOrgFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    listOrgs(filter: $filter, limit: $limit, nextToken: $nextToken) {
+      items {
+        id
+        name
+        createdAt
+        updatedAt
+        __typename
+      }
+      nextToken
+      __typename
+    }
+  }
+`;
+export const usersByOrganizationID = /* GraphQL */ `
+  query UsersByOrganizationID(
+    $organizationID: ID!
+    $sortDirection: ModelSortDirection
+    $filter: ModelUserFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    usersByOrganizationID(
+      organizationID: $organizationID
+      sortDirection: $sortDirection
+      filter: $filter
+      limit: $limit
+      nextToken: $nextToken
+    ) {
+      items {
+        id
+        name
+        email
+        organizationID
+        managerID
+        createdAt
+        updatedAt
+        __typename
+      }
+      nextToken
+      __typename
+    }
+  }
+`;
+export const usersByManagerID = /* GraphQL */ `
+  query UsersByManagerID(
+    $managerID: ID!
+    $sortDirection: ModelSortDirection
+    $filter: ModelUserFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    usersByManagerID(
+      managerID: $managerID
+      sortDirection: $sortDirection
+      filter: $filter
+      limit: $limit
+      nextToken: $nextToken
+    ) {
+      items {
+        id
+        name
+        email
+        organizationID
+        managerID
+        createdAt
+        updatedAt
+        __typename
+      }
+      nextToken
+      __typename
+    }
+  }
+`;

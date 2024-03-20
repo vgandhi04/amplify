@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "serviceConfiguration": {
+    "apiName": "movieGQL",
+    "serviceName": "AppSync",
+    "defaultAuthType": {
+      "mode": "AWS_IAM"
+    },
+    "conflictResolution": {},
+    "additionalAuthTypes": []
+  }
+}

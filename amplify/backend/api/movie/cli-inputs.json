@@ -1,0 +1,36 @@
+{
+  "version": 1,
+  "paths": {
+    "/items": {
+      "name": "/items",
+      "lambdaFunction": "crudData",
+      "permissions": {
+        "setting": "protected",
+        "auth": [
+          "create",
+          "read",
+          "update",
+          "delete"
+        ],
+        "guest": [
+          "read"
+        ],
+        "groups": {
+          "movieUserPool": [
+            "create",
+            "read",
+            "update",
+            "delete"
+          ]
+        }
+      }
+    },
+    "/redis": {
+      "name": "/redis",
+      "lambdaFunction": "redisLambda",
+      "permissions": {
+        "setting": "open"
+      }
+    }
+  }
+}

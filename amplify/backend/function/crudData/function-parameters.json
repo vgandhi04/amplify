@@ -1,0 +1,13 @@
+{
+  "lambdaLayers": [],
+  "permissions": {
+    "storage": {
+      "Movie:@model(appsync)": [
+        "create",
+        "read",
+        "update",
+        "delete"
+      ]
+    }
+  }
+}

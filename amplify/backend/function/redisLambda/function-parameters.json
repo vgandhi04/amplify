@@ -1,0 +1,21 @@
+{
+  "lambdaLayers": [
+    {
+      "type": "ProjectLayer",
+      "resourceName": "moviepipLayer",
+      "version": "Always choose latest version",
+      "isLatestVersionSelected": true,
+      "env": "qa"
+    }
+  ],
+  "permissions": {
+    "storage": {
+      "Movie:@model(appsync)": [
+        "create",
+        "read",
+        "update",
+        "delete"
+      ]
+    }
+  }
+}

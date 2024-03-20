@@ -1,0 +1,18 @@
+{
+  "lambdaLayers": [
+    {
+      "type": "ProjectLayer",
+      "resourceName": "moviepipLayer",
+      "version": "Always choose latest version",
+      "isLatestVersionSelected": true,
+      "env": "qa"
+    }
+  ],
+  "permissions": {
+    "auth": {
+      "movie9a1f50e7": [
+        "read"
+      ]
+    }
+  }
+}
