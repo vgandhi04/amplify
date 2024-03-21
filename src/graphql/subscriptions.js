@@ -109,9 +109,11 @@ export const onDeleteUser = /* GraphQL */ `
     }
   }
 `;
-export const onCreateOrg = /* GraphQL */ `
-  subscription OnCreateOrg($filter: ModelSubscriptionOrgFilterInput) {
-    onCreateOrg(filter: $filter) {
+export const onCreateOrganization = /* GraphQL */ `
+  subscription OnCreateOrganization(
+    $filter: ModelSubscriptionOrganizationFilterInput
+  ) {
+    onCreateOrganization(filter: $filter) {
       id
       name
       user {
@@ -124,9 +126,11 @@ export const onCreateOrg = /* GraphQL */ `
     }
   }
 `;
-export const onUpdateOrg = /* GraphQL */ `
-  subscription OnUpdateOrg($filter: ModelSubscriptionOrgFilterInput) {
-    onUpdateOrg(filter: $filter) {
+export const onUpdateOrganization = /* GraphQL */ `
+  subscription OnUpdateOrganization(
+    $filter: ModelSubscriptionOrganizationFilterInput
+  ) {
+    onUpdateOrganization(filter: $filter) {
       id
       name
       user {
@@ -139,9 +143,11 @@ export const onUpdateOrg = /* GraphQL */ `
     }
   }
 `;
-export const onDeleteOrg = /* GraphQL */ `
-  subscription OnDeleteOrg($filter: ModelSubscriptionOrgFilterInput) {
-    onDeleteOrg(filter: $filter) {
+export const onDeleteOrganization = /* GraphQL */ `
+  subscription OnDeleteOrganization(
+    $filter: ModelSubscriptionOrganizationFilterInput
+  ) {
+    onDeleteOrganization(filter: $filter) {
       id
       name
       user {
