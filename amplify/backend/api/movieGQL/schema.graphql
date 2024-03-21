@@ -29,16 +29,33 @@ type User
     ]
   ) {
   id: ID!
-  name: String!
+  name: String
   email: String!
-  organizationID: ID @index(name: "orgID")
-  organization: Org @belongsTo (fields: ["organizationID"])
+    @index(name: "byEmail")
+    @auth(
+      rules: [
+        {
+          allow: private
+          provider: iam
+          operations: [create, read, update, delete]
+        }
+      ]
+    )
+  # Organization information
+  # User [belongsTo] organization
+  # Index on organizationID. name is byOrganization.
+  # User [byOrganization] organizaionID
+  organizationID: ID @index(name: "byOrganization")
+  organization: Organization @belongsTo(fields: ["organizationID"])
 
-  managerID: ID @index(name: "manID")
-  manager: [User] @hasMany (fields: ["managerID"])
+  # Manager Inforamtion
+  # User [hasMany] manager [byManager] managerID
+  # index on managerID. name is byManager
+  managerID: ID @index(name: "byManager")
+  manager: [User] @hasMany(fields: ["managerID"])
 }
 
-type Org
+type Organization
   @model
   @auth(
     rules: [
@@ -51,7 +68,10 @@ type Org
   ) {
   id: ID!
   name: String!
-  user: [User] @hasMany (indexName: "orgID", fields: ["id"])
+  # User information
+  # Organization [hasMany] User where index on [byOrganization]
+  # which match with the id of the org
+  user: [User] @hasMany(indexName: "byOrganization", fields: ["id"])
 }
 
 # type Role

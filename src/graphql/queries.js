@@ -88,9 +88,9 @@ export const listUsers = /* GraphQL */ `
     }
   }
 `;
-export const getOrg = /* GraphQL */ `
-  query GetOrg($id: ID!) {
-    getOrg(id: $id) {
+export const getOrganization = /* GraphQL */ `
+  query GetOrganization($id: ID!) {
+    getOrganization(id: $id) {
       id
       name
       user {
@@ -103,16 +103,46 @@ export const getOrg = /* GraphQL */ `
     }
   }
 `;
-export const listOrgs = /* GraphQL */ `
-  query ListOrgs(
-    $filter: ModelOrgFilterInput
+export const listOrganizations = /* GraphQL */ `
+  query ListOrganizations(
+    $filter: ModelOrganizationFilterInput
     $limit: Int
     $nextToken: String
   ) {
-    listOrgs(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    listOrganizations(filter: $filter, limit: $limit, nextToken: $nextToken) {
       items {
         id
         name
+        createdAt
+        updatedAt
+        __typename
+      }
+      nextToken
+      __typename
+    }
+  }
+`;
+export const usersByEmail = /* GraphQL */ `
+  query UsersByEmail(
+    $email: String!
+    $sortDirection: ModelSortDirection
+    $filter: ModelUserFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    usersByEmail(
+      email: $email
+      sortDirection: $sortDirection
+      filter: $filter
+      limit: $limit
+      nextToken: $nextToken
+    ) {
+      items {
+        id
+        name
+        email
+        organizationID
+        managerID
         createdAt
         updatedAt
         __typename

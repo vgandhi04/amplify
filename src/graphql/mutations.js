@@ -127,12 +127,12 @@ export const deleteUser = /* GraphQL */ `
     }
   }
 `;
-export const createOrg = /* GraphQL */ `
-  mutation CreateOrg(
-    $input: CreateOrgInput!
-    $condition: ModelOrgConditionInput
+export const createOrganization = /* GraphQL */ `
+  mutation CreateOrganization(
+    $input: CreateOrganizationInput!
+    $condition: ModelOrganizationConditionInput
   ) {
-    createOrg(input: $input, condition: $condition) {
+    createOrganization(input: $input, condition: $condition) {
       id
       name
       user {
@@ -145,12 +145,12 @@ export const createOrg = /* GraphQL */ `
     }
   }
 `;
-export const updateOrg = /* GraphQL */ `
-  mutation UpdateOrg(
-    $input: UpdateOrgInput!
-    $condition: ModelOrgConditionInput
+export const updateOrganization = /* GraphQL */ `
+  mutation UpdateOrganization(
+    $input: UpdateOrganizationInput!
+    $condition: ModelOrganizationConditionInput
   ) {
-    updateOrg(input: $input, condition: $condition) {
+    updateOrganization(input: $input, condition: $condition) {
       id
       name
       user {
@@ -163,12 +163,12 @@ export const updateOrg = /* GraphQL */ `
     }
   }
 `;
-export const deleteOrg = /* GraphQL */ `
-  mutation DeleteOrg(
-    $input: DeleteOrgInput!
-    $condition: ModelOrgConditionInput
+export const deleteOrganization = /* GraphQL */ `
+  mutation DeleteOrganization(
+    $input: DeleteOrganizationInput!
+    $condition: ModelOrganizationConditionInput
   ) {
-    deleteOrg(input: $input, condition: $condition) {
+    deleteOrganization(input: $input, condition: $condition) {
       id
       name
       user {
