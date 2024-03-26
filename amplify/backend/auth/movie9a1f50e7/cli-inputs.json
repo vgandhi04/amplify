@@ -56,12 +56,26 @@
       ]
     },
     "breakCircularDependency": true,
-    "dependsOn": [],
+    "dependsOn": [
+      {
+        "category": "function",
+        "resourceName": "movie9a1f50e7PreTokenGeneration",
+        "triggerProvider": "Cognito",
+        "attributes": [
+          "Arn",
+          "Name"
+        ]
+      }
+    ],
     "thirdPartyAuth": false,
     "authProviders": [],
     "userPoolGroups": true,
     "adminQueries": false,
-    "triggers": {},
+    "triggers": {
+      "PreTokenGeneration": [
+        "alter-claims"
+      ]
+    },
     "hostedUI": true,
     "hostedUIDomainName": "domain-movie",
     "authProvidersUserPool": [],
@@ -70,6 +84,7 @@
       "Ref": "AWS::StackId"
     },
     "permissions": [],
-    "oAuthMetadata": "{\"AllowedOAuthFlows\":[\"code\"],\"AllowedOAuthScopes\":[\"phone\",\"email\",\"openid\"],\"CallbackURLs\":[\"https://example.com/\",\"https://example.com/\"],\"LogoutURLs\":[\"https://example.com/\"]}"
+    "oAuthMetadata": "{\"AllowedOAuthFlows\":[\"code\"],\"AllowedOAuthScopes\":[\"phone\",\"email\",\"openid\"],\"CallbackURLs\":[\"https://example.com/\",\"https://example.com/\"],\"LogoutURLs\":[\"https://example.com/\"]}",
+    "authTriggerConnections": "[\n  {\n    \"triggerType\": \"PreTokenGeneration\",\n    \"lambdaFunctionName\": \"movie9a1f50e7PreTokenGeneration\"\n  }\n]"
   }
 }

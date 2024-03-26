@@ -7,7 +7,13 @@ from jose import jwt
 
 USER_POOL_ID = os.environ.get('AUTH_MOVIE9A1F50E7_USERPOOLID')
 AWS_REGION = os.environ.get('REGION')
-CLIENT_ID = "6t1afmo4o4n2p7ru3d2o52robv"
+ENV = os.environ.get('ENV')
+
+if ENV == "dev":
+    CLIENT_ID = "6t1afmo4o4n2p7ru3d2o52robv"
+else:
+    CLIENT_ID = "50iscn2dsrmk50iq166dc3lu9"
+    
 
 def handler(event, context):
     try:
