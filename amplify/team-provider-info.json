@@ -21,7 +21,7 @@
       "function": {
         "apiAuthorizer": {
           "deploymentBucketName": "amplify-movie-qa-192220-deployment",
-          "s3Key": "amplify-builds/apiAuthorizer-5642546f773064763969-build.zip"
+          "s3Key": "amplify-builds/apiAuthorizer-6f564a61426f62574e35-build.zip"
         },
         "crudData": {
           "deploymentBucketName": "amplify-movie-qa-192220-deployment",
@@ -33,14 +33,14 @@
         },
         "redisLambda": {
           "deploymentBucketName": "amplify-movie-qa-192220-deployment",
-          "s3Key": "amplify-builds/redisLambda-414a69485a48312b4539-build.zip"
+          "s3Key": "amplify-builds/redisLambda-756276622b4f524d4a48-build.zip"
         },
         "movie9a1f50e7": {},
         "movieGQL": {},
         "redisClusterV2": {},
         "movie9a1f50e7PreTokenGeneration": {
           "deploymentBucketName": "amplify-movie-qa-192220-deployment",
-          "s3Key": "amplify-builds/movie9a1f50e7PreTokenGeneration-622b746539796a714962-build.zip"
+          "s3Key": "amplify-builds/movie9a1f50e7PreTokenGeneration-666159763771384d7458-build.zip"
         }
       },
       "api": {
