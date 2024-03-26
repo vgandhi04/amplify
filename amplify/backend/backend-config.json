@@ -147,6 +147,15 @@
     },
     "movie9a1f50e7PreTokenGeneration": {
       "build": true,
+      "dependsOn": [
+        {
+          "attributes": [
+            "GraphQLAPIIdOutput"
+          ],
+          "category": "api",
+          "resourceName": "movieGQL"
+        }
+      ],
       "providerPlugin": "awscloudformation",
       "service": "Lambda"
     },
