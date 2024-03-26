@@ -30,17 +30,7 @@ type User
   ) {
   id: ID!
   name: String
-  email: String!
-    @index(name: "byEmail")
-    @auth(
-      rules: [
-        {
-          allow: private
-          provider: iam
-          operations: [create, read, update, delete]
-        }
-      ]
-    )
+  email: String! @index(name: "byEmail")
   # Organization information
   # User [belongsTo] organization
   # Index on organizationID. name is byOrganization.

@@ -126,11 +126,6 @@
             "API_MOVIEGQL_GRAPHQLAPIIDOUTPUT": {
               "Ref": "apimovieGQLGraphQLAPIIdOutput"
             },
-            "REDIS_ENDPOINT": {
-              "Fn::ImportValue": {
-                "Fn::Sub": "RedisEndpoint-${env}"
-              }
-            },
             "customredisClusterV2PrivateSubnetID": {
               "Fn::ImportValue": {
                 "Fn::Sub": "customredisClusterV2PrivateSubnetID-${env}"

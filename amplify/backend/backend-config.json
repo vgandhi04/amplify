@@ -53,7 +53,17 @@
   "auth": {
     "movie9a1f50e7": {
       "customAuth": false,
-      "dependsOn": [],
+      "dependsOn": [
+        {
+          "attributes": [
+            "Arn",
+            "Name"
+          ],
+          "category": "function",
+          "resourceName": "movie9a1f50e7PreTokenGeneration",
+          "triggerProvider": "Cognito"
+        }
+      ],
       "frontendAuthConfig": {
         "mfaConfiguration": "OFF",
         "mfaTypes": [
@@ -135,6 +145,11 @@
       "providerPlugin": "awscloudformation",
       "service": "Lambda"
     },
+    "movie9a1f50e7PreTokenGeneration": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
     "moviepipLayer": {
       "build": true,
       "providerPlugin": "awscloudformation",
@@ -192,6 +207,22 @@
         {
           "category": "function",
           "resourceName": "crudData"
+        }
+      ]
+    },
+    "AMPLIFY_function_movie9a1f50e7PreTokenGeneration_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "movie9a1f50e7PreTokenGeneration"
+        }
+      ]
+    },
+    "AMPLIFY_function_movie9a1f50e7PreTokenGeneration_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "movie9a1f50e7PreTokenGeneration"
         }
       ]
     },
