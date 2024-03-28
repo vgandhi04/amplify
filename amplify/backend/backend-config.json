@@ -37,10 +37,25 @@
       "service": "API Gateway"
     },
     "movieGQL": {
-      "dependsOn": [],
+      "dependsOn": [
+        {
+          "attributes": [
+            "UserPoolId"
+          ],
+          "category": "auth",
+          "resourceName": "movie9a1f50e7"
+        }
+      ],
       "output": {
         "authConfig": {
-          "additionalAuthenticationProviders": [],
+          "additionalAuthenticationProviders": [
+            {
+              "authenticationType": "AMAZON_COGNITO_USER_POOLS",
+              "userPoolConfig": {
+                "userPoolId": "authmovie9a1f50e7"
+              }
+            }
+          ],
           "defaultAuthentication": {
             "authenticationType": "AWS_IAM"
           }
@@ -180,6 +195,15 @@
           ],
           "category": "function",
           "resourceName": "moviepipLayer"
+        },
+        {
+          "attributes": [
+            "PrivateSubnetID",
+            "Ec2SecurityGroupID",
+            "RedisEndpoint"
+          ],
+          "category": "custom",
+          "resourceName": "redisClusterV2"
         }
       ],
       "providerPlugin": "awscloudformation",

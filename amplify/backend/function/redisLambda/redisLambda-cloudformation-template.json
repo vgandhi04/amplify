@@ -31,6 +31,18 @@
     "apimovieGQLGraphQLAPIIdOutput": {
       "Type": "String",
       "Default": "apimovieGQLGraphQLAPIIdOutput"
+    },
+    "customredisClusterV2PrivateSubnetID": {
+      "Type": "String",
+      "Default": "customredisClusterV2PrivateSubnetID"
+    },
+    "customredisClusterV2Ec2SecurityGroupID": {
+      "Type": "String",
+      "Default": "customredisClusterV2Ec2SecurityGroupID"
+    },
+    "customredisClusterV2RedisEndpoint": {
+      "Type": "String",
+      "Default": "customredisClusterV2RedisEndpoint"
     }
   },
   "Conditions": {
@@ -126,15 +138,14 @@
             "API_MOVIEGQL_GRAPHQLAPIIDOUTPUT": {
               "Ref": "apimovieGQLGraphQLAPIIdOutput"
             },
-            "customredisClusterV2PrivateSubnetID": {
-              "Fn::ImportValue": {
-                "Fn::Sub": "customredisClusterV2PrivateSubnetID-${env}"
-              }
+            "Private_Subnet_ID": {
+              "Ref": "customredisClusterV2PrivateSubnetID"
             },
-            "customredisClusterV2Ec2SecurityGroupID": {
-              "Fn::ImportValue": {
-                "Fn::Sub": "customredisClusterV2Ec2SecurityGroupID-${env}"
-              }
+            "Ec2_Security_Group_ID": {
+              "Ref": "customredisClusterV2Ec2SecurityGroupID"
+            },
+            "Redis_Endpoint": {
+              "Ref": "customredisClusterV2RedisEndpoint"
             }
           }
         },
@@ -154,16 +165,12 @@
         "VpcConfig": {
           "SubnetIds": [
             {
-              "Fn::ImportValue": {
-                "Fn::Sub": "customredisClusterV2PrivateSubnetID-${env}"
-              }
+              "Ref": "customredisClusterV2PrivateSubnetID"
             }
           ],
           "SecurityGroupIds": [
             {
-              "Fn::ImportValue": {
-                "Fn::Sub": "customredisClusterV2Ec2SecurityGroupID-${env}"
-              }
+              "Ref": "customredisClusterV2Ec2SecurityGroupID"
             }
           ]
         }

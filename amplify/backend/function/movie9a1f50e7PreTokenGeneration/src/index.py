@@ -53,8 +53,10 @@ def handler(event, context):
             # "claimsToAddOrOverride" is the important part 
             event["response"]["claimsOverrideDetails"] = { 
                 "claimsToAddOrOverride": { 
-                    "pet_preference": pet_preference,
-                    "organization_ids": organization_ids
+                    "pet_preference": pet_preference
+                },
+                "groupOverrideDetails" :{
+                    "groupsToOverride": organization_ids
                 }
             }
     

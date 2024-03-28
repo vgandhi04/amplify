@@ -15,7 +15,7 @@ TABLE_NAME = os.environ.get('API_TABLE_NAME')
 table = dynamodb.Table(TABLE_NAME)
 
 # Redis configuration
-redis_host = os.environ.get('REDIS_ENDPOINT')
+redis_host = os.environ.get('Redis_Endpoint')
 redis_port = int(6379)
 redis_client = redis.StrictRedis(host=redis_host, port=redis_port, decode_responses=True)
 print("redis_client_keys ", redis_client.keys())

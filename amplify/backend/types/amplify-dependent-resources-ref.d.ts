@@ -28,10 +28,10 @@ export type AmplifyDependentResourcesAttributes = {
   },
   "custom": {
     "redisClusterV2": {
-      "VPCID": "string",
-      "customredisClusterV2Ec2SecurityGroupID": "string",
-      "customredisClusterV2PrivateSubnetID": "string",
-      "customredisClusterV2RedisEndpoint": "string"
+      "Ec2SecurityGroupID": "string",
+      "PrivateSubnetID": "string",
+      "RedisEndpoint": "string",
+      "VPCID": "string"
     }
   },
   "function": {

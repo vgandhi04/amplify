@@ -182,7 +182,7 @@
           {
             "Key": "Name",
             "Value": {
-              "Fn::Sub": "privateElastiCacheSecurityGroupc-${env}"
+              "Fn::Sub": "privateElastiCacheSecurityGroup-${env}"
             }
           }
         ],
@@ -222,7 +222,10 @@
         "NumCacheNodes": 1,
         "VpcSecurityGroupIds": [
           {
-            "Fn::GetAtt": ["ElastiCacheSecurityGroup", "GroupId"]
+            "Fn::GetAtt": [
+              "ElastiCacheSecurityGroup",
+              "GroupId"
+            ]
           }
         ],
         "CacheSubnetGroupName": {
@@ -262,7 +265,10 @@
       "Type": "AWS::EC2::NatGateway",
       "Properties": {
         "AllocationId": {
-          "Fn::GetAtt": ["NATGatewayEIP", "AllocationId"]
+          "Fn::GetAtt": [
+            "NATGatewayEIP",
+            "AllocationId"
+          ]
         },
         "SubnetId": {
           "Ref": "PublicSubnet"
@@ -292,7 +298,9 @@
       }
     },
     "RouteNATGateway": {
-      "DependsOn": ["NATGateway"],
+      "DependsOn": [
+        "NATGateway"
+      ],
       "Type": "AWS::EC2::Route",
       "Properties": {
         "RouteTableId": {
@@ -316,29 +324,32 @@
         }
       }
     },
-    "customredisClusterV2PrivateSubnetID": {
+    "PrivateSubnetID": {
       "Value": {
         "Ref": "PrivateSubnet"
       },
       "Export": {
         "Name": {
-          "Fn::Sub": "customredisClusterV2PrivateSubnetID-${env}"
+          "Fn::Sub": "PrivateSubnetID-${env}"
         }
       }
     },
-    "customredisClusterV2Ec2SecurityGroupID": {
+    "Ec2SecurityGroupID": {
       "Value": {
         "Ref": "ElastiCacheSecurityGroup"
       },
       "Export": {
         "Name": {
-          "Fn::Sub": "customredisClusterV2Ec2SecurityGroupID-${env}"
+          "Fn::Sub": "Ec2SecurityGroupID-${env}"
         }
       }
     },
-    "customredisClusterV2RedisEndpoint": {
+    "RedisEndpoint": {
       "Value": {
-        "Fn::GetAtt": ["RedisCluster", "RedisEndpoint.Address"]
+        "Fn::GetAtt": [
+          "RedisCluster",
+          "RedisEndpoint.Address"
+        ]
       },
       "Export": {
         "Name": {
