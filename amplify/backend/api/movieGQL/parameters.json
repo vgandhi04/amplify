@@ -2,5 +2,11 @@
   "AppSyncApiName": "movieGQL",
   "DynamoDBBillingMode": "PAY_PER_REQUEST",
   "DynamoDBEnableServerSideEncryption": false,
-  "AuthModeLastUpdated": "2024-03-20T12:27:04.667Z"
+  "AuthModeLastUpdated": "2024-03-27T06:39:04.823Z",
+  "AuthCognitoUserPoolId": {
+    "Fn::GetAtt": [
+      "authmovie9a1f50e7",
+      "Outputs.UserPoolId"
+    ]
+  }
 }

@@ -1,34 +1,6 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
-export const createMovie = /* GraphQL */ `
-  mutation CreateMovie(
-    $input: CreateMovieInput!
-    $condition: ModelMovieConditionInput
-  ) {
-    createMovie(input: $input, condition: $condition) {
-      year
-      title
-      createdAt
-      updatedAt
-      __typename
-    }
-  }
-`;
-export const updateMovie = /* GraphQL */ `
-  mutation UpdateMovie(
-    $input: UpdateMovieInput!
-    $condition: ModelMovieConditionInput
-  ) {
-    updateMovie(input: $input, condition: $condition) {
-      year
-      title
-      createdAt
-      updatedAt
-      __typename
-    }
-  }
-`;
 export const deleteMovie = /* GraphQL */ `
   mutation DeleteMovie(
     $input: DeleteMovieInput!
@@ -37,6 +9,14 @@ export const deleteMovie = /* GraphQL */ `
     deleteMovie(input: $input, condition: $condition) {
       year
       title
+      organizationID
+      organization {
+        id
+        name
+        createdAt
+        updatedAt
+        __typename
+      }
       createdAt
       updatedAt
       __typename
@@ -62,7 +42,13 @@ export const createUser = /* GraphQL */ `
       }
       managerID
       manager {
-        nextToken
+        id
+        name
+        email
+        organizationID
+        managerID
+        createdAt
+        updatedAt
         __typename
       }
       createdAt
@@ -90,7 +76,13 @@ export const updateUser = /* GraphQL */ `
       }
       managerID
       manager {
-        nextToken
+        id
+        name
+        email
+        organizationID
+        managerID
+        createdAt
+        updatedAt
         __typename
       }
       createdAt
@@ -118,7 +110,13 @@ export const deleteUser = /* GraphQL */ `
       }
       managerID
       manager {
-        nextToken
+        id
+        name
+        email
+        organizationID
+        managerID
+        createdAt
+        updatedAt
         __typename
       }
       createdAt
@@ -136,6 +134,10 @@ export const createOrganization = /* GraphQL */ `
       id
       name
       user {
+        nextToken
+        __typename
+      }
+      movie {
         nextToken
         __typename
       }
@@ -157,6 +159,10 @@ export const updateOrganization = /* GraphQL */ `
         nextToken
         __typename
       }
+      movie {
+        nextToken
+        __typename
+      }
       createdAt
       updatedAt
       __typename
@@ -173,6 +179,54 @@ export const deleteOrganization = /* GraphQL */ `
       name
       user {
         nextToken
+        __typename
+      }
+      movie {
+        nextToken
+        __typename
+      }
+      createdAt
+      updatedAt
+      __typename
+    }
+  }
+`;
+export const createMovie = /* GraphQL */ `
+  mutation CreateMovie(
+    $input: CreateMovieInput!
+    $condition: ModelMovieConditionInput
+  ) {
+    createMovie(input: $input, condition: $condition) {
+      year
+      title
+      organizationID
+      organization {
+        id
+        name
+        createdAt
+        updatedAt
+        __typename
+      }
+      createdAt
+      updatedAt
+      __typename
+    }
+  }
+`;
+export const updateMovie = /* GraphQL */ `
+  mutation UpdateMovie(
+    $input: UpdateMovieInput!
+    $condition: ModelMovieConditionInput
+  ) {
+    updateMovie(input: $input, condition: $condition) {
+      year
+      title
+      organizationID
+      organization {
+        id
+        name
+        createdAt
+        updatedAt
         __typename
       }
       createdAt

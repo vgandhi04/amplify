@@ -1,46 +1,6 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
-export const getMovie = /* GraphQL */ `
-  query GetMovie($year: Int!, $title: String!) {
-    getMovie(year: $year, title: $title) {
-      year
-      title
-      createdAt
-      updatedAt
-      __typename
-    }
-  }
-`;
-export const listMovies = /* GraphQL */ `
-  query ListMovies(
-    $year: Int
-    $title: ModelStringKeyConditionInput
-    $filter: ModelMovieFilterInput
-    $limit: Int
-    $nextToken: String
-    $sortDirection: ModelSortDirection
-  ) {
-    listMovies(
-      year: $year
-      title: $title
-      filter: $filter
-      limit: $limit
-      nextToken: $nextToken
-      sortDirection: $sortDirection
-    ) {
-      items {
-        year
-        title
-        createdAt
-        updatedAt
-        __typename
-      }
-      nextToken
-      __typename
-    }
-  }
-`;
 export const getUser = /* GraphQL */ `
   query GetUser($id: ID!) {
     getUser(id: $id) {
@@ -57,7 +17,13 @@ export const getUser = /* GraphQL */ `
       }
       managerID
       manager {
-        nextToken
+        id
+        name
+        email
+        organizationID
+        managerID
+        createdAt
+        updatedAt
         __typename
       }
       createdAt
@@ -94,6 +60,10 @@ export const getOrganization = /* GraphQL */ `
       id
       name
       user {
+        nextToken
+        __typename
+      }
+      movie {
         nextToken
         __typename
       }
@@ -203,6 +173,83 @@ export const usersByManagerID = /* GraphQL */ `
         email
         organizationID
         managerID
+        createdAt
+        updatedAt
+        __typename
+      }
+      nextToken
+      __typename
+    }
+  }
+`;
+export const getMovie = /* GraphQL */ `
+  query GetMovie($year: Int!, $title: String!) {
+    getMovie(year: $year, title: $title) {
+      year
+      title
+      organizationID
+      organization {
+        id
+        name
+        createdAt
+        updatedAt
+        __typename
+      }
+      createdAt
+      updatedAt
+      __typename
+    }
+  }
+`;
+export const listMovies = /* GraphQL */ `
+  query ListMovies(
+    $year: Int
+    $title: ModelStringKeyConditionInput
+    $filter: ModelMovieFilterInput
+    $limit: Int
+    $nextToken: String
+    $sortDirection: ModelSortDirection
+  ) {
+    listMovies(
+      year: $year
+      title: $title
+      filter: $filter
+      limit: $limit
+      nextToken: $nextToken
+      sortDirection: $sortDirection
+    ) {
+      items {
+        year
+        title
+        organizationID
+        createdAt
+        updatedAt
+        __typename
+      }
+      nextToken
+      __typename
+    }
+  }
+`;
+export const moviesByOrganizationID = /* GraphQL */ `
+  query MoviesByOrganizationID(
+    $organizationID: ID!
+    $sortDirection: ModelSortDirection
+    $filter: ModelMovieFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    moviesByOrganizationID(
+      organizationID: $organizationID
+      sortDirection: $sortDirection
+      filter: $filter
+      limit: $limit
+      nextToken: $nextToken
+    ) {
+      items {
+        year
+        title
+        organizationID
         createdAt
         updatedAt
         __typename

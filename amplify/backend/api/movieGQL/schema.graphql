@@ -11,10 +11,18 @@ type Movie
         provider: iam
         operations: [create, read, update, delete]
       }
+      {
+        allow: groups
+        provider: userPools
+        groups: ["movie9a1f50e7_userpool_9a1f50e7-qa"]
+        operations: [create, read, update]
+      }
     ]
   ) {
   year: Int! @primaryKey(sortKeyFields: ["title"])
   title: String!
+  organizationID: ID @index(name: "byOrganization")
+  organization: Organization @belongsTo(fields: ["organizationID"])
 }
 
 type User
@@ -42,7 +50,7 @@ type User
   # User [hasMany] manager [byManager] managerID
   # index on managerID. name is byManager
   managerID: ID @index(name: "byManager")
-  manager: [User] @hasMany(fields: ["managerID"])
+  manager: User @hasOne(fields: ["managerID"])
 }
 
 type Organization
@@ -62,6 +70,7 @@ type Organization
   # Organization [hasMany] User where index on [byOrganization]
   # which match with the id of the org
   user: [User] @hasMany(indexName: "byOrganization", fields: ["id"])
+  movie: [Movie] @hasMany(indexName: "byOrganization", fields: ["id"])
 }
 
 # type Role

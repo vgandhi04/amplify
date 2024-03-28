@@ -1,39 +1,6 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
-export const onCreateMovie = /* GraphQL */ `
-  subscription OnCreateMovie($filter: ModelSubscriptionMovieFilterInput) {
-    onCreateMovie(filter: $filter) {
-      year
-      title
-      createdAt
-      updatedAt
-      __typename
-    }
-  }
-`;
-export const onUpdateMovie = /* GraphQL */ `
-  subscription OnUpdateMovie($filter: ModelSubscriptionMovieFilterInput) {
-    onUpdateMovie(filter: $filter) {
-      year
-      title
-      createdAt
-      updatedAt
-      __typename
-    }
-  }
-`;
-export const onDeleteMovie = /* GraphQL */ `
-  subscription OnDeleteMovie($filter: ModelSubscriptionMovieFilterInput) {
-    onDeleteMovie(filter: $filter) {
-      year
-      title
-      createdAt
-      updatedAt
-      __typename
-    }
-  }
-`;
 export const onCreateUser = /* GraphQL */ `
   subscription OnCreateUser($filter: ModelSubscriptionUserFilterInput) {
     onCreateUser(filter: $filter) {
@@ -50,7 +17,13 @@ export const onCreateUser = /* GraphQL */ `
       }
       managerID
       manager {
-        nextToken
+        id
+        name
+        email
+        organizationID
+        managerID
+        createdAt
+        updatedAt
         __typename
       }
       createdAt
@@ -75,7 +48,13 @@ export const onUpdateUser = /* GraphQL */ `
       }
       managerID
       manager {
-        nextToken
+        id
+        name
+        email
+        organizationID
+        managerID
+        createdAt
+        updatedAt
         __typename
       }
       createdAt
@@ -100,7 +79,13 @@ export const onDeleteUser = /* GraphQL */ `
       }
       managerID
       manager {
-        nextToken
+        id
+        name
+        email
+        organizationID
+        managerID
+        createdAt
+        updatedAt
         __typename
       }
       createdAt
@@ -117,6 +102,10 @@ export const onCreateOrganization = /* GraphQL */ `
       id
       name
       user {
+        nextToken
+        __typename
+      }
+      movie {
         nextToken
         __typename
       }
@@ -137,6 +126,10 @@ export const onUpdateOrganization = /* GraphQL */ `
         nextToken
         __typename
       }
+      movie {
+        nextToken
+        __typename
+      }
       createdAt
       updatedAt
       __typename
@@ -152,6 +145,67 @@ export const onDeleteOrganization = /* GraphQL */ `
       name
       user {
         nextToken
+        __typename
+      }
+      movie {
+        nextToken
+        __typename
+      }
+      createdAt
+      updatedAt
+      __typename
+    }
+  }
+`;
+export const onCreateMovie = /* GraphQL */ `
+  subscription OnCreateMovie($filter: ModelSubscriptionMovieFilterInput) {
+    onCreateMovie(filter: $filter) {
+      year
+      title
+      organizationID
+      organization {
+        id
+        name
+        createdAt
+        updatedAt
+        __typename
+      }
+      createdAt
+      updatedAt
+      __typename
+    }
+  }
+`;
+export const onUpdateMovie = /* GraphQL */ `
+  subscription OnUpdateMovie($filter: ModelSubscriptionMovieFilterInput) {
+    onUpdateMovie(filter: $filter) {
+      year
+      title
+      organizationID
+      organization {
+        id
+        name
+        createdAt
+        updatedAt
+        __typename
+      }
+      createdAt
+      updatedAt
+      __typename
+    }
+  }
+`;
+export const onDeleteMovie = /* GraphQL */ `
+  subscription OnDeleteMovie($filter: ModelSubscriptionMovieFilterInput) {
+    onDeleteMovie(filter: $filter) {
+      year
+      title
+      organizationID
+      organization {
+        id
+        name
+        createdAt
+        updatedAt
         __typename
       }
       createdAt
