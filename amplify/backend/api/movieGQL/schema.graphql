@@ -13,8 +13,7 @@ type Movie
       }
       {
         allow: groups
-        provider: userPools
-        groups: ["movie9a1f50e7_userpool_9a1f50e7-qa"]
+        groupsField: "organizationID"
         operations: [create, read, update]
       }
     ]
@@ -72,33 +71,3 @@ type Organization
   user: [User] @hasMany(indexName: "byOrganization", fields: ["id"])
   movie: [Movie] @hasMany(indexName: "byOrganization", fields: ["id"])
 }
-
-# type Role
-#   @model
-#   @auth(
-#     rules: [
-#       {
-#         allow: private
-#         provider: iam
-#         operations: [create, read, update, delete]
-#       }
-#     ]
-#   ) {
-#   name: String! @primaryKey
-# }
-
-# type UserRoleOrg
-#   @model
-#   @auth(
-#     rules: [
-#       {
-#         allow: private
-#         provider: iam
-#         operations: [create, read, update, delete]
-#       }
-#     ]
-#   ) {
-#   user: User! @hasOne
-#   role: Role! @hasOne
-#   org: Org! @hasOne
-# }
