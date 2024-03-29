@@ -36,6 +36,7 @@ def handler(event, context):
             IndexName='byEmail',
             KeyConditionExpression=Key('email').eq(user_email)
         )
+        print("Response -- ", response)
         items_found = response.get('Items', [])
         print("items_found - ", items_found)
         user_organization_ids = []

@@ -4,13 +4,13 @@
     "apiName": "movieGQL",
     "serviceName": "AppSync",
     "defaultAuthType": {
-      "mode": "AWS_IAM"
+      "mode": "AMAZON_COGNITO_USER_POOLS",
+      "cognitoUserPoolId": "authmovie9a1f50e7"
     },
     "conflictResolution": {},
     "additionalAuthTypes": [
       {
-        "mode": "AMAZON_COGNITO_USER_POOLS",
-        "cognitoUserPoolId": "authmovie9a1f50e7"
+        "mode": "AWS_IAM"
       }
     ]
   }

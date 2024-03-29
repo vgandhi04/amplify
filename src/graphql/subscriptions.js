@@ -1,6 +1,63 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
+export const onCreateMovie = /* GraphQL */ `
+  subscription OnCreateMovie($filter: ModelSubscriptionMovieFilterInput) {
+    onCreateMovie(filter: $filter) {
+      year
+      title
+      organizationID
+      organization {
+        id
+        name
+        createdAt
+        updatedAt
+        __typename
+      }
+      createdAt
+      updatedAt
+      __typename
+    }
+  }
+`;
+export const onUpdateMovie = /* GraphQL */ `
+  subscription OnUpdateMovie($filter: ModelSubscriptionMovieFilterInput) {
+    onUpdateMovie(filter: $filter) {
+      year
+      title
+      organizationID
+      organization {
+        id
+        name
+        createdAt
+        updatedAt
+        __typename
+      }
+      createdAt
+      updatedAt
+      __typename
+    }
+  }
+`;
+export const onDeleteMovie = /* GraphQL */ `
+  subscription OnDeleteMovie($filter: ModelSubscriptionMovieFilterInput) {
+    onDeleteMovie(filter: $filter) {
+      year
+      title
+      organizationID
+      organization {
+        id
+        name
+        createdAt
+        updatedAt
+        __typename
+      }
+      createdAt
+      updatedAt
+      __typename
+    }
+  }
+`;
 export const onCreateUser = /* GraphQL */ `
   subscription OnCreateUser($filter: ModelSubscriptionUserFilterInput) {
     onCreateUser(filter: $filter) {
@@ -149,63 +206,6 @@ export const onDeleteOrganization = /* GraphQL */ `
       }
       movie {
         nextToken
-        __typename
-      }
-      createdAt
-      updatedAt
-      __typename
-    }
-  }
-`;
-export const onCreateMovie = /* GraphQL */ `
-  subscription OnCreateMovie($filter: ModelSubscriptionMovieFilterInput) {
-    onCreateMovie(filter: $filter) {
-      year
-      title
-      organizationID
-      organization {
-        id
-        name
-        createdAt
-        updatedAt
-        __typename
-      }
-      createdAt
-      updatedAt
-      __typename
-    }
-  }
-`;
-export const onUpdateMovie = /* GraphQL */ `
-  subscription OnUpdateMovie($filter: ModelSubscriptionMovieFilterInput) {
-    onUpdateMovie(filter: $filter) {
-      year
-      title
-      organizationID
-      organization {
-        id
-        name
-        createdAt
-        updatedAt
-        __typename
-      }
-      createdAt
-      updatedAt
-      __typename
-    }
-  }
-`;
-export const onDeleteMovie = /* GraphQL */ `
-  subscription OnDeleteMovie($filter: ModelSubscriptionMovieFilterInput) {
-    onDeleteMovie(filter: $filter) {
-      year
-      title
-      organizationID
-      organization {
-        id
-        name
-        createdAt
-        updatedAt
         __typename
       }
       createdAt
