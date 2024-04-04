@@ -197,6 +197,9 @@ def handler(event, context):
                     # If the item exists, delete it and add its key to the found list
                     table.delete_item(Key=key)
                     found.append(key)
+                    
+                    # Also delete the corresponding data from Redis
+                    redis_client.delete(json.dumps(key, sort_keys=True))
                 else:
                     # If the item does not exist, add its key to the not_found list
                     not_found.append(key)

@@ -8,13 +8,8 @@ dynamodb = boto3.resource('dynamodb')
 env = os.environ.get('ENV')
 aws_region = os.environ.get('REGION')
 
-if env == 'dev':
-    TABLE_NAME = 'Movie-mkv4ppybrzdvndrpzlc44uxgt4-dev'
-else:
-    TABLE_NAME = 'MovieStage-65xuyvcblfcs5ohcxrrjeec4wu-stage'
-
+TABLE_NAME = os.environ.get('API_TABLE_NAME')
 print("TABLE_NAME ", TABLE_NAME)
-
 table = dynamodb.Table(TABLE_NAME)
 
 def handler(event, context):
@@ -33,7 +28,6 @@ def handler(event, context):
             with table.batch_writer() as batch:
             
                 for item in new_data:
-                    # item = json.loads(json.dumps(item))
                     item = json.loads(json.dumps(item), parse_float=Decimal)
                     print("item ", item)
                     
@@ -66,9 +60,7 @@ def handler(event, context):
         total_data = []
         try:
             for i in range(0, len(new_data), batch_size):
-                
                 batch_data = new_data[i:i + batch_size]
-                
                 keys_to_get = [{'year': int(item['year']), 'title': item['title']} for item in batch_data]
                 
                 print("keys_to_get ", keys_to_get)
