@@ -1,6 +1,5 @@
 import json
 import time
-# import requests   
 import os
 import urllib.request as url
 from jose import jwt
@@ -12,7 +11,7 @@ ENV = os.environ.get('ENV')
 if ENV == "dev":
     CLIENT_ID = "6t1afmo4o4n2p7ru3d2o52robv"
 else:
-    CLIENT_ID = "50iscn2dsrmk50iq166dc3lu9"
+    CLIENT_ID = "41e7n6tptvk0gibe8b957qfp2a"
     
 
 def handler(event, context):
@@ -21,8 +20,6 @@ def handler(event, context):
         print(event)
         print('received context:')
         print(context)
-        # access_token = event['headers']['auth-token']
-        # access_token = event['headers']['authorizationToken']
         access_token = event['authorizationToken']
         print("access_token ", access_token)
                 
@@ -30,13 +27,6 @@ def handler(event, context):
 
         response = url.urlopen(jwks_url)
         jwks = json.loads(response.read().decode('utf-8'))
-        # Fetch the keys from Cognito
-        # response = requests.get(jwks_url)
-        # print("response ", response)
-        
-        # jwks = json.loads(response.text)
-        # print("jwks ", jwks)
-        # print("jwks - key ", jwks['keys'])
         
         # Decode and verify the access_token using the fetched keys
         unverified_header = jwt.get_unverified_header(access_token)
@@ -102,15 +92,3 @@ def handler(event, context):
             'statusCode': 500,
             'body': json.dumps('An error occurred: {}'.format(e))
         }
-  
-     
-        
-    # return {
-    #     'statusCode': 200,
-    #     'headers': {
-    #         'Access-Control-Allow-Headers': '*',
-    #         'Access-Control-Allow-Origin': '*',
-    #         'Access-Control-Allow-Methods': 'OPTIONS,POST,GET'
-    #     },
-    #     'body': json.dumps('Hello from your new Amplify Python lambda!')
-    # }

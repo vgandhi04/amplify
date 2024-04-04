@@ -29,14 +29,13 @@ def handler(event, context):
         email_verified = 'false'
         user_email = event['request']['userAttributes']['email']
     
-    
+    # Check user's status and email
     if user_status == 'CONFIRMED' and email_verified == 'true':
         # Query DynamoDB to get user's organization ID
         response = table.query(
             IndexName='byEmail',
             KeyConditionExpression=Key('email').eq(user_email)
         )
-        print("Response -- ", response)
         items_found = response.get('Items', [])
         print("items_found - ", items_found)
         user_organization_ids = []
@@ -47,11 +46,13 @@ def handler(event, context):
             if organization_id:
                 user_organization_ids.append(organization_id)
         
+        # Override the claims
         if user_organization_ids:
             pet_preference = 'dogs'
             organization_ids = user_organization_ids
             # this allows us to override claims in the id token
-            # "claimsToAddOrOverride" is the important part 
+            # "claimsToAddOrOverride" is for single vlaue
+            # "groupOverrideDetails" is for list
             event["response"]["claimsOverrideDetails"] = { 
                 "claimsToAddOrOverride": { 
                     "pet_preference": pet_preference
