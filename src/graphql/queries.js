@@ -14,6 +14,8 @@ export const getMovie = /* GraphQL */ `
         updatedAt
         __typename
       }
+      admin
+      team
       createdAt
       updatedAt
       __typename
@@ -41,6 +43,8 @@ export const listMovies = /* GraphQL */ `
         year
         title
         organizationID
+        admin
+        team
         createdAt
         updatedAt
         __typename
@@ -69,6 +73,8 @@ export const moviesByOrganizationID = /* GraphQL */ `
         year
         title
         organizationID
+        admin
+        team
         createdAt
         updatedAt
         __typename
@@ -99,10 +105,12 @@ export const getUser = /* GraphQL */ `
         email
         organizationID
         managerID
+        role
         createdAt
         updatedAt
         __typename
       }
+      role
       createdAt
       updatedAt
       __typename
@@ -122,6 +130,7 @@ export const listUsers = /* GraphQL */ `
         email
         organizationID
         managerID
+        role
         createdAt
         updatedAt
         __typename
@@ -152,6 +161,7 @@ export const usersByEmail = /* GraphQL */ `
         email
         organizationID
         managerID
+        role
         createdAt
         updatedAt
         __typename
@@ -182,6 +192,7 @@ export const usersByOrganizationID = /* GraphQL */ `
         email
         organizationID
         managerID
+        role
         createdAt
         updatedAt
         __typename
@@ -212,6 +223,7 @@ export const usersByManagerID = /* GraphQL */ `
         email
         organizationID
         managerID
+        role
         createdAt
         updatedAt
         __typename

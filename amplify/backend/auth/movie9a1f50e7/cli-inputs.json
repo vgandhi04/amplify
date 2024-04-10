@@ -84,7 +84,7 @@
       "Ref": "AWS::StackId"
     },
     "permissions": [],
-    "oAuthMetadata": "{\"AllowedOAuthFlows\":[\"code\"],\"AllowedOAuthScopes\":[\"phone\",\"email\",\"openid\"],\"CallbackURLs\":[\"https://example.com/\",\"https://example.com/\"],\"LogoutURLs\":[\"https://example.com/\"]}",
-    "authTriggerConnections": "[\n  {\n    \"triggerType\": \"PreTokenGeneration\",\n    \"lambdaFunctionName\": \"movie9a1f50e7PreTokenGeneration\"\n  }\n]"
+    "authTriggerConnections": "[\n  {\n    \"triggerType\": \"PreTokenGeneration\",\n    \"lambdaFunctionName\": \"movie9a1f50e7PreTokenGeneration\"\n  }\n]",
+    "oAuthMetadata": "{\"AllowedOAuthFlows\":[\"implicit\"],\"AllowedOAuthScopes\":[\"phone\",\"email\",\"openid\"],\"CallbackURLs\":[\"https://example.com/\",\"https://example.com/\"],\"LogoutURLs\":[\"https://example.com/\"]}"
   }
 }

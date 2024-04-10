@@ -14,6 +14,8 @@ export const onCreateMovie = /* GraphQL */ `
         updatedAt
         __typename
       }
+      admin
+      team
       createdAt
       updatedAt
       __typename
@@ -33,6 +35,8 @@ export const onUpdateMovie = /* GraphQL */ `
         updatedAt
         __typename
       }
+      admin
+      team
       createdAt
       updatedAt
       __typename
@@ -52,6 +56,8 @@ export const onDeleteMovie = /* GraphQL */ `
         updatedAt
         __typename
       }
+      admin
+      team
       createdAt
       updatedAt
       __typename
@@ -79,10 +85,12 @@ export const onCreateUser = /* GraphQL */ `
         email
         organizationID
         managerID
+        role
         createdAt
         updatedAt
         __typename
       }
+      role
       createdAt
       updatedAt
       __typename
@@ -110,10 +118,12 @@ export const onUpdateUser = /* GraphQL */ `
         email
         organizationID
         managerID
+        role
         createdAt
         updatedAt
         __typename
       }
+      role
       createdAt
       updatedAt
       __typename
@@ -141,10 +151,12 @@ export const onDeleteUser = /* GraphQL */ `
         email
         organizationID
         managerID
+        role
         createdAt
         updatedAt
         __typename
       }
+      role
       createdAt
       updatedAt
       __typename

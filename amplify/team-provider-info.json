@@ -21,11 +21,11 @@
       "function": {
         "apiAuthorizer": {
           "deploymentBucketName": "amplify-movie-qa-192220-deployment",
-          "s3Key": "amplify-builds/apiAuthorizer-6f564a61426f62574e35-build.zip"
+          "s3Key": "amplify-builds/apiAuthorizer-6a6f396149395a35476c-build.zip"
         },
         "crudData": {
           "deploymentBucketName": "amplify-movie-qa-192220-deployment",
-          "s3Key": "amplify-builds/crudData-303877736f7161644c4b-build.zip"
+          "s3Key": "amplify-builds/crudData-5970664a766c72734978-build.zip"
         },
         "moviepipLayer": {
           "deploymentBucketName": "amplify-movie-qa-192220-deployment",
@@ -33,14 +33,14 @@
         },
         "redisLambda": {
           "deploymentBucketName": "amplify-movie-qa-192220-deployment",
-          "s3Key": "amplify-builds/redisLambda-383538516539446f4161-build.zip"
+          "s3Key": "amplify-builds/redisLambda-48656532514159555978-build.zip"
         },
         "movie9a1f50e7": {},
         "movieGQL": {},
         "redisClusterV2": {},
         "movie9a1f50e7PreTokenGeneration": {
           "deploymentBucketName": "amplify-movie-qa-192220-deployment",
-          "s3Key": "amplify-builds/movie9a1f50e7PreTokenGeneration-4b565065724867373063-build.zip"
+          "s3Key": "amplify-builds/movie9a1f50e7PreTokenGeneration-69723232306a7573706a-build.zip"
         }
       },
       "api": {
