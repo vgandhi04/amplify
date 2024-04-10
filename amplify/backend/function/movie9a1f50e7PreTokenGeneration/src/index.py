@@ -43,8 +43,11 @@ def handler(event, context):
         for item in items_found:
             organization_id = item.get('organizationID')
             print("organization_id - ", organization_id)
+            role_name = item.get('role')
+            print("role_name - ", role_name)
             if organization_id:
                 user_organization_ids.append(organization_id)
+                user_organization_ids.append(f"{organization_id}-{role_name}")
         
         # Override the claims
         if user_organization_ids:

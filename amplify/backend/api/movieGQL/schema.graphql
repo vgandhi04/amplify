@@ -11,10 +11,20 @@ type Movie
         provider: iam
         operations: [create, read, update, delete]
       }
+      # {
+      #   allow: groups
+      #   groupsField: "organizationID"
+      #   operations: [create, read, update]
+      # }
       {
         allow: groups
-        groupsField: "organizationID"
-        operations: [create, read, update]
+        groupsField: "admin"
+        operations: [create, read, update, delete]
+      }
+      {
+        allow: groups
+        groupsField: "team"
+        operations: [read]
       }
     ]
   ) {
@@ -22,6 +32,8 @@ type Movie
   title: String!
   organizationID: ID @index(name: "byOrganization")
   organization: Organization @belongsTo(fields: ["organizationID"])
+  admin: String
+  team: String
 }
 
 type User
@@ -50,6 +62,12 @@ type User
   # index on managerID. name is byManager
   managerID: ID @index(name: "byManager")
   manager: User @hasOne(fields: ["managerID"])
+  role: UserRole! @default(value: "Team")
+}
+
+enum UserRole {
+  Admin
+  Team
 }
 
 type Organization
