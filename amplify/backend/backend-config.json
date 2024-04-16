@@ -31,6 +31,14 @@
           ],
           "category": "function",
           "resourceName": "redisLambda"
+        },
+        {
+          "attributes": [
+            "Name",
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "searchable"
         }
       ],
       "providerPlugin": "awscloudformation",
@@ -146,6 +154,11 @@
       "providerPlugin": "awscloudformation",
       "service": "Lambda"
     },
+    "approute": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
     "crudData": {
       "build": true,
       "dependsOn": [
@@ -208,6 +221,11 @@
       ],
       "providerPlugin": "awscloudformation",
       "service": "Lambda"
+    },
+    "searchable": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
     }
   },
   "parameters": {
@@ -224,6 +242,22 @@
         {
           "category": "function",
           "resourceName": "apiAuthorizer"
+        }
+      ]
+    },
+    "AMPLIFY_function_approute_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "approute"
+        }
+      ]
+    },
+    "AMPLIFY_function_approute_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "approute"
         }
       ]
     },
@@ -288,6 +322,22 @@
         {
           "category": "function",
           "resourceName": "redisLambda"
+        }
+      ]
+    },
+    "AMPLIFY_function_searchable_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "searchable"
+        }
+      ]
+    },
+    "AMPLIFY_function_searchable_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "searchable"
         }
       ]
     }

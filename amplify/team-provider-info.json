@@ -25,7 +25,7 @@
         },
         "crudData": {
           "deploymentBucketName": "amplify-movie-qa-192220-deployment",
-          "s3Key": "amplify-builds/crudData-5970664a766c72734978-build.zip"
+          "s3Key": "amplify-builds/crudData-656f48706c7941743837-build.zip"
         },
         "moviepipLayer": {
           "deploymentBucketName": "amplify-movie-qa-192220-deployment",
@@ -41,6 +41,14 @@
         "movie9a1f50e7PreTokenGeneration": {
           "deploymentBucketName": "amplify-movie-qa-192220-deployment",
           "s3Key": "amplify-builds/movie9a1f50e7PreTokenGeneration-69723232306a7573706a-build.zip"
+        },
+        "searchable": {
+          "deploymentBucketName": "amplify-movie-qa-192220-deployment",
+          "s3Key": "amplify-builds/searchable-73724c357056634a7635-build.zip"
+        },
+        "approute": {
+          "deploymentBucketName": "amplify-movie-qa-192220-deployment",
+          "s3Key": "amplify-builds/approute-41545178485963343778-build.zip"
         }
       },
       "api": {
