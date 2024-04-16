@@ -84,6 +84,55 @@ export const moviesByOrganizationID = /* GraphQL */ `
     }
   }
 `;
+export const searchMovies = /* GraphQL */ `
+  query SearchMovies(
+    $filter: SearchableMovieFilterInput
+    $sort: [SearchableMovieSortInput]
+    $limit: Int
+    $nextToken: String
+    $from: Int
+    $aggregates: [SearchableMovieAggregationInput]
+  ) {
+    searchMovies(
+      filter: $filter
+      sort: $sort
+      limit: $limit
+      nextToken: $nextToken
+      from: $from
+      aggregates: $aggregates
+    ) {
+      items {
+        year
+        title
+        organizationID
+        admin
+        team
+        createdAt
+        updatedAt
+        __typename
+      }
+      nextToken
+      total
+      aggregateItems {
+        name
+        result {
+          ... on SearchableAggregateScalarResult {
+            value
+          }
+          ... on SearchableAggregateBucketResult {
+            buckets {
+              key
+              doc_count
+              __typename
+            }
+          }
+        }
+        __typename
+      }
+      __typename
+    }
+  }
+`;
 export const getUser = /* GraphQL */ `
   query GetUser($id: ID!) {
     getUser(id: $id) {

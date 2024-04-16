@@ -4,6 +4,7 @@
 
 type Movie
   @model
+  @searchable
   @auth(
     rules: [
       {
