@@ -11,7 +11,8 @@ def handler(event, context):
     event1 = event['body'][0]
     query = event1.get("query", "")
     year = event1.get("year", "")
-
+    result = "".join([f"{w}*" for w in query])
+    print("Q1 - ", result)
     print("Q - ", query)
     print("Y - ", year)
 
@@ -26,6 +27,11 @@ def handler(event, context):
         "query": {
             "bool": {
                 "should": [
+                    {
+                        "wildcard": {
+                            "title": result
+                        }
+                    },
                     {
                         "multi_match": {
                             "query": query,
