@@ -44,11 +44,11 @@
         },
         "searchable": {
           "deploymentBucketName": "amplify-movie-qa-192220-deployment",
-          "s3Key": "amplify-builds/searchable-73724c357056634a7635-build.zip"
+          "s3Key": "amplify-builds/searchable-62734e6d4a6e4d617366-build.zip"
         },
         "approute": {
           "deploymentBucketName": "amplify-movie-qa-192220-deployment",
-          "s3Key": "amplify-builds/approute-41545178485963343778-build.zip"
+          "s3Key": "amplify-builds/approute-5a2b627a4f6a43315a6a-build.zip"
         }
       },
       "api": {

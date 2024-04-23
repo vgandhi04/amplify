@@ -11,13 +11,19 @@ export function override(resources: AmplifyApiRestResourceStackTemplate, amplify
 
     // Adding parameter to your Cloud Formation Template for Authorizer function arn
     resources.addCfnParameter(
-    {
-        type: "String",
-        description: "The ARN of an existing Lambda Function to authorize requests",
-        default: "NONE",
-    },
-    functionArnParameter,
-    { "Fn::GetAtt": [`function${functionResourcename}`, "Outputs.Arn"], }
+        {
+            type: "String",
+            description: "The ARN of an existing Lambda Function to authorize requests",
+            default: "NONE",
+        },
+        functionArnParameter,
+        { 
+            "Fn::GetAtt": 
+            [
+                `function${functionResourcename}`,
+                "Outputs.Arn"
+            ], 
+        }
     );
 
 
@@ -48,36 +54,34 @@ export function override(resources: AmplifyApiRestResourceStackTemplate, amplify
         },
     });
 
-
-
     // Adding Resource Based policy to Lambda authorizer function
     resources.addCfnResource(
         {
-        type: "AWS::Lambda::Permission",
-        properties: {
-            Action: "lambda:InvokeFunction",
-            FunctionName: {Ref: functionArnParameter},
-            Principal: "apigateway.amazonaws.com",
-            SourceArn:{
-            "Fn::Join": [
-                "",
-                [
-                "arn:aws:execute-api:",
-                {
-                    "Ref": "AWS::Region"
-                },
-                ":",
-                {
-                    "Ref": "AWS::AccountId"
-                },
-                ":",
-                {
-                    "Ref": "movie"
-                },
-                "/*/*"
-                ]
-                ]
-            }
+            type: "AWS::Lambda::Permission",
+            properties: {
+                Action: "lambda:InvokeFunction",
+                FunctionName: {Ref: functionArnParameter},
+                Principal: "apigateway.amazonaws.com",
+                SourceArn:{
+                    "Fn::Join": [
+                        "",
+                        [
+                            "arn:aws:execute-api:",
+                            {
+                                "Ref": "AWS::Region"
+                            },
+                            ":",
+                            {
+                                "Ref": "AWS::AccountId"
+                            },
+                            ":",
+                            {
+                                "Ref": "movie"
+                            },
+                            "/*/*"
+                        ]
+                    ]
+                }
             }
         },
         "LambdaAuthorizerResourceBasedPolicy"
